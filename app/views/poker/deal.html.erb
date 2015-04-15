@@ -2,10 +2,12 @@
 <p>
 	<% suit = ["hearts","clubs","spades", "diamonds"] %>
 	<% rank = ["ace",2,3,4,5,6,7,8,9,10,"jack","queen","king"] %>
-	<img src ="http://golearntocode.com/images/cards/<%= rank.sample %>_of_<%= suit.sample %>.png">
-	<img src ="http://golearntocode.com/images/cards/<%= rank.sample %>_of_<%= suit.sample %>.png">
-	<img src ="http://golearntocode.com/images/cards/<%= rank.sample %>_of_<%= suit.sample %>.png">
-	<img src ="http://golearntocode.com/images/cards/<%= rank.sample %>_of_<%= suit.sample %>.png">
-	<img src ="http://golearntocode.com/images/cards/<%= rank.sample %>_of_<%= suit.sample %>.png">
+	<% deck = rank.product(suit) %>
+	<% deck.shuffle! %>
+	<img src ="http://golearntocode.com/images/cards/<%= deck[0][0] %>_of_<%= deck[0][1] %>.png">
+	<img src ="http://golearntocode.com/images/cards/<%= deck[1][0] %>_of_<%= deck[1][1] %>.png">
+	<img src ="http://golearntocode.com/images/cards/<%= deck[2][0] %>_of_<%= deck[2][1] %>.png">
+	<img src ="http://golearntocode.com/images/cards/<%= deck[3][0] %>_of_<%= deck[3][1] %>.png">
+	<img src ="http://golearntocode.com/images/cards/<%= deck[4][0] %>_of_<%= deck[4][1] %>.png">
 
 </p>
